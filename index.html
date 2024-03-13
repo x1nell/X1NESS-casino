@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script> 
+        var styleLink = document.createElement("link"); 
+        styleLink.rel = "stylesheet"; 
+        styleLink.type = "text/css"; 
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            styleLink.href = "css/mobile.css"; 
+        } else {  
+            styleLink.href = "css/main.css"; 
+        }
+        document.head.appendChild(styleLink); 
+    </script>
+    <title>casino-X1NESS</title>
+</head>
+<body>
+    <h1>X1NESS Casino</h1>
+    <table id="slot">
+        <tr>
+            <td id="cell00"></td>
+            <td id="cell01"></td>
+            <td id="cell02"></td>
+            <td id="cell03"></td>
+            <td id="cell04"></td>
+            <td id="cell05"></td>
+        </tr>
+        <tr>
+            <td id="cell10"></td>
+            <td id="cell11"></td>
+            <td id="cell12"></td>
+            <td id="cell13"></td>
+            <td id="cell14"></td>
+            <td id="cell15"></td>
+        </tr>
+        <tr>
+            <td id="cell20"></td>
+            <td id="cell21"></td>
+            <td id="cell22"></td>
+            <td id="cell23"></td>
+            <td id="cell24"></td>
+            <td id="cell25"></td>
+        </tr>
+    </table>
+
+    <div id="underline" class="under">
+        <p>Баланс: <span id="balance">100</span></p>
+        <p>Ставка: <input type="number" id="betAmount" value="1" min="1"></p>
+        <button onclick="spin()">Крутить</button>
+        <button onclick="openDepositModal()">Депозит</button>
+        <button onclick="openWithdrawModal()">Вывод</button>
+        <p id="result"></p>
+    </div>
+
+    <div id="depositModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDepositModal()">&times;</span>
+            <p>Введите сумму для депозита:</p>
+            <input type="number" id="depositAmount" min="0">
+            <button onclick="confirmDeposit()">Подтвердить</button>
+        </div>
+    </div>
+
+    <div id="withdrawModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWithdrawModal()">&times;</span>
+            <p>Введите сумму для вывода:</p>
+            <input type="number" id="withdrawAmount" min="0">
+            <button onclick="confirmWithdraw()">Подтвердить</button>
+        </div>
+    </div>   
+
+    <script src="main.js"></script>
+
+</body>
+</html>
